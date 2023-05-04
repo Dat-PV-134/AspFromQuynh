@@ -1,0 +1,29 @@
+﻿@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+
+    <h2>THÔNG BÁO KẾT QUẢ</h2>
+
+
+    <table width="500px" class="table-bordered">
+        <tr>
+            <td>Họ tên thí sinh: </td>
+            <td>@ViewBag.ten</td>
+        </tr>
+        <tr>
+            <td>Điểm: </td>
+            <td>@ViewBag.diem</td>
+        </tr>
+        <tr>
+            <td>Kết quả: </td>
+            <td>@ViewBag.kq</td>
+        </tr>
+    </table>
+</body>
+</html>

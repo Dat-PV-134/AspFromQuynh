@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "TinhToan";
+}
+
+<h2>TinhToan</h2>
+
+<form action="Tinh" method="post">
+    <p>
+        <label>Number 1</label>
+        <input type="text" name="num1" />
+    </p>
+    <p>
+        <label>Number 2</label>
+        <input type="text" name="num2" />
+    </p>
+
+    <p>
+        <label>Phép tính: </label>
+        <input type="radio" name="pheptinh" value="+" />Cong &nbsp;
+        <input type="radio" name="pheptinh" value="-" />Tru &nbsp;
+        <input type="radio" name="pheptinh" value="*" />Nhan &nbsp;
+        <input type="radio" name="pheptinh" value="/" />Chia &nbsp;
+        <hr />
+    </p>
+    &nbsp;
+    <input type="submit" value="Tinh" />
+</form>
+
+@ViewBag.msg

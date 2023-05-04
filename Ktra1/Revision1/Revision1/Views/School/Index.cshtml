@@ -1,0 +1,43 @@
+﻿@model Revision1.Models.Students
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Add new student</h2>
+
+@using (Html.BeginForm("DisplayAStudent", "School"))
+{
+    <h4>Students</h4>
+    <hr />
+    <table>
+        <tr>
+            <td> @Html.Label("Student ID: ") Student ID: </td>
+            <td>@Html.TextBox("sId") </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Student Name: ") Student Name: </td>
+            <td>@Html.TextBox("sName") </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Student Age: ") Student Age: </td>
+            <td>@Html.TextBox("Age")  </td>
+        </tr>
+        <tr>
+            <td> @Html.Label("Student Address: ") Student Address: </td>
+            <td>@Html.TextBox("Addr") </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="padding: 10px;">
+                <input type="submit" value="Register" />
+                <input type="reset" value="Cancel" />
+            </td>
+        </tr>
+    </table>
+    
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

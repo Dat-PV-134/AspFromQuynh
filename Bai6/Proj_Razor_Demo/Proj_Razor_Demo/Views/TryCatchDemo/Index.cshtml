@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Tru catch Demo</h2>
+@{
+    var dataFilePath = "~/dataFile.txt";
+    var fileContent = "";
+    var physicalPath = Server.MapPath(dataFilePath);
+    var userMessage = "Hello World, the time is: " + DateTime.Now;
+    var userErrMsg = "";
+    var errMsg = "";
+
+if (IsPost)
+    {
+        try
+        {
+            // khi user click vao button "Open File, se mo file va doc dl
+            fileContent = File.ReadAllText(@"e:\dataFile.txt");
+
+            //tat dong lenh tren de thoat khoi ngoai le
+            fileContent = File.ReadAllText(physicalPath);
+        }
+        catch (FileNotFoundException ex)
+        {
+            errMsg = ex.Message;
+            userErrMsg = "A file could not oepn.";
+        }
+        catch (DirectoryNotFoundException ex)
+        {
+            errMsg = ex.Message;
+            userErrMsg = "A direcory was not found.";
+        }
+    }
+    else
+    {
+        //lan dau tien se chay ben duoi vi pthuc gui len server la get, tao file text
+        File.WriteAllText(physicalPath, userMessage);
+    }
+}
+
+<form action="" method="post">
+    <input type="submit" name="sb" value="Open File" />
+</form>
+<p></p>
+<p>@physicalPath</p>
+<p></p>
+<h3>@fileContent</h3>
+<p></p>
+<p>@userErrMsg</p>

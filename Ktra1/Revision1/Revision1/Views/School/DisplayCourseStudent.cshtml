@@ -1,0 +1,44 @@
+﻿@model Revision1.Models.CourseStudent
+
+@{
+    ViewBag.Title = "DisplayCourseStudent";
+}
+
+<h2>DisplayCourseStudent</h2>
+<p> &nbsp; </p>
+
+<div>
+    <h4>CourseStudent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+    </dl>
+    <h3>Courses Information</h3>
+
+    <label>Course ID: </label>
+    <label>@Model.course.cId</label> 
+    <br />
+
+    <label>Course Name: </label>
+    <label>@Model.course.cName</label>
+    <br /> 
+
+    <h3>List of Students</h3>
+    <table>
+        <tr>
+            <th>ID </th>
+            <th>Name </th>
+            <th>Age </th>
+            <th>Address </th>
+        </tr>
+        @foreach (var item in Model.students)
+        {
+            <tr>
+                <td>@item.sId</td>
+                <td>@item.sName</td>
+                <td>@item.Age</td>
+                <td>@item.Addr</td>
+            </tr>
+        }
+    </table>
+</div>
+

@@ -1,0 +1,56 @@
+﻿
+<h2>THÔNG TIN NHÂN VIÊN</h2>
+<form action="/NhanVien/TinhLuong" method="post">
+    <table width="500px" height="300px" class="table-bordered">
+        <tr>
+            <td>Mã NV: </td>
+            <td>
+                <input type="text" name="Id" />
+            </td>
+        </tr>
+        <tr>
+            <td>Bậc lương: </td>
+            <td>
+                <input type="text" name="Bac" />
+            </td>
+        </tr>
+        <tr>
+            <td>Ngày công: </td>
+            <td>
+                <input type="number" name="Ngaycong" />
+            </td>
+        </tr>
+        <tr>
+            <td>Chức vụ: </td>
+            <td>
+                <select name="ChucVu">
+                    <option value="0">Trưởng phòng</option>
+                    <option value="1">Phó phòng</option>
+                    <option value="1">Nhân viên</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Giới tính: </td>
+            <td>
+                <input type="radio" name="gender" value="0" checked/> Nam
+                <input type="radio" name="gender" value="1" /> Nữ
+            </td>
+        </tr>
+        <tr>
+            <td>Ngoại ngữ: </td>
+            <td>
+                <input type="checkbox" name="ngoaingu" value="0" /> Anh
+                <input type="checkbox" name="ngoaingu" value="1" /> Pháp
+                <input type="checkbox" name="ngoaingu" value="2" /> Nga
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button type="submit" name="btnTinh">Tính</button>
+                <button type="reset" name="btnXoa">Xóa</button>
+            </td>
+        </tr>
+    </table>
+</form>
+

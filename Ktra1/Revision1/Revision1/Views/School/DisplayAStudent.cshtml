@@ -1,0 +1,33 @@
+﻿@model Revision1.Models.Students
+
+@{
+    ViewBag.Title = "DisplayAStudent";
+}
+
+<h2>DisplayAStudent</h2>
+
+<div>
+    <h4>Students</h4>
+    <hr />
+
+    <table border="1" class="border table-bordered">
+        <tr>
+            <td>Mã sinh viên</td>
+            <td>@Model.sId</td>
+        </tr>
+        <tr>
+            <td>Họ tên</td>
+            <td>@Model.sName</td>
+        </tr>
+        <tr>
+            <td>Tuổi</td>
+            <td>@Model.Age</td>
+        </tr>
+        <tr>
+            <td>Địa chỉ</td>
+            <td>@Model.Addr</td>
+        </tr>
+    </table>
+    
+</div>
+

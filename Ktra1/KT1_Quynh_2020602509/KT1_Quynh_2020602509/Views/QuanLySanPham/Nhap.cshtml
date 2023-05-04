@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Nhap";
+}
+
+<h2>Nhap thong tin</h2>
+@using (Html.BeginForm("HienThiNgay", "QuanLySanPham"))
+{
+    <table class="table-bordered table">
+        <tr>
+            <td>Mã sản phẩm: </td>
+            <td>@Html.TextBox("ma")</td>
+        </tr>
+
+
+        <tr>
+            <td>Tên sản phẩm: </td>
+            <td>@Html.TextBox("ten")</td>
+        </tr>
+        <tr>
+            <td>Số Lượng: </td>
+            <td>@Html.TextBox("soluong")</td>
+        </tr>
+        <tr>
+            <td>Giá tiền:  </td>
+            <td>@Html.TextBox("giatien")</td>
+        </tr>
+        <tr>
+            <td>Giám giá: </td>
+            <td>@Html.TextBox("giamgia")</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Nhập" />
+            </td>
+        </tr>
+    </table>
+
+}
+

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="stylesheet" href="~/Content/MyStyle.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="page">
+            <div class="header">
+                <div class="title">
+                    <h1> KIỂM TRA 1 - ASP.NET</h1>
+                </div>
+
+                <div class="menu">
+
+                    <ul>
+                        <li><a href="~/QuanLySanPham/Nhap">Thêm sản phẩm</a></li>
+                        <li><a href="~/QuanLySanPham/HienThi2DS">Hiển thị danh sách</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content">
+                @RenderBody()
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

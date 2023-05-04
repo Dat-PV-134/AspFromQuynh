@@ -1,0 +1,60 @@
+﻿@model KT1_Quynh_2020602509.Models.SanPham
+
+@{
+    ViewBag.Title = "Hienthi2DS";
+
+}
+
+<h2>Hienthi 2DS</h2>
+
+<div>
+    <h3>Danh sách 1</h3>
+    &nbsp;
+
+    <table border="1" class="table-bordered table">
+        <tr>
+            <th>Mã sản phẩm</th>
+            <th>Tên sản phẩm</th>
+            <th>Số lượng</th>
+            <th>Giá tiền</th>
+            <th>Giám giá</th>
+        </tr>
+
+        @foreach (var item in ViewBag.ds1)
+        {
+            <tr>
+                <td>@item.ma</td>
+                <td>@item.ten</td>
+                <td>@item.soluong</td>
+                <td>@item.giatien</td>
+                <td>@item.giamgia</td>
+            </tr>
+        }
+    </table>
+    &nbsp;
+    <p> &nbsp; </p>
+    <h3>Danh sách 2</h3>
+    &nbsp;
+    <table border="1" class="table-bordered table">
+        <tr>
+            <th>Mã sản phẩm</th>
+            <th>Tên sản phẩm</th>
+            <th>Số lượng</th>
+            <th>Giá tiền</th>
+            <th>Giám giá</th>
+        </tr>
+
+        @foreach (var item in ViewBag.ds2)
+        {
+            <tr>
+                <td>@item.ma</td>
+                <td>@item.ten</td>
+                <td>@item.soluong</td>
+                <td>@item.giatien</td>
+                <td>@item.giamgia</td>
+            </tr>
+        }
+    </table>
+
+</div>
+

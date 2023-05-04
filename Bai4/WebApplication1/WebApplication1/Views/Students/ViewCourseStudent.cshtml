@@ -1,0 +1,55 @@
+﻿@model WebApplication1.Models.CourseStudent
+
+@{
+    ViewBag.Title = "ViewCourseStudent";
+}
+
+<style>
+    th{
+        text-align: center !important;
+    }
+</style>
+<h2>ViewCourseStudent</h2>
+
+<div>
+    <h4>CourseStudent</h4>
+    <h5>id: @Model.course.courseId</h5>
+    <h5>name: @Model.course.name</h5>
+    <table width="300px">
+        <tr >
+            <th>id</th>
+            <th>name</th>
+            <th>address</th>
+            <th>mark</th>
+        </tr>
+        @foreach (var item in Model.students)
+        {
+            <tr>
+                <td>
+                    @item.id
+                </td>
+                <td>
+                    @item.name
+                </td>
+                <td>
+                    @item.address
+                </td>
+                <td>
+                    @item.mark
+                    <br/>
+                </td>
+            </tr>
+        }
+    </table>
+
+
+
+
+
+    @*@foreach (var item in Model.students)
+    {
+        @item.id    @item.name  @item.address   @item.mark <br>
+    }*@
+
+</div>
+

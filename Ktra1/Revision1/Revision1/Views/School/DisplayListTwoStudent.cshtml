@@ -1,0 +1,63 @@
+﻿@model Revision1.Models.Students
+
+@{
+    ViewBag.Title = "DisplayListTwoStudent";
+    List<Revision1.Models.Students> li1 = ViewBag.li1;
+    List<Revision1.Models.Students> li2 = ViewBag.li2;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DisplayListTwoStudent</title>
+</head>
+<body>
+    <div>
+        <h3>List Students 1 </h3>
+        <p> &nbsp; </p>
+
+        <table border="1" class="table table-bordered">
+            <tr>
+                <td>Mã sinh viên</td>
+                <td>Họ và tên</td>
+                <td> Tuổi</td>
+                <td>Địa chỉ</td>
+            </tr>
+
+            @foreach (var item in li1)
+            {
+                <tr>
+                    <td>@item.sId</td>
+                    <td>@item.sName</td>
+                    <td>@item.Age</td>
+                    <td>@item.Addr</td>
+                </tr>
+            }
+        </table>
+
+        <h3>List Students 2 </h3>
+
+        <table border="1" class="table table-bordered">
+            <tr>
+                <td>Mã sinh viên</td>
+                <td>Họ và tên</td>
+                <td> Tuổi</td>
+                <td>Địa chỉ</td>
+            </tr>
+
+            @foreach (var item in li1)
+            {
+                <tr>
+                    <td>@item.sId</td>
+                    <td>@item.sName</td>
+                    <td>@item.Age</td>
+                    <td>@item.Addr</td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
+

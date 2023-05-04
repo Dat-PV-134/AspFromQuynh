@@ -1,0 +1,70 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My layout</title>
+    <link href="~/Content/MyStyle.css" rel="stylesheet" />
+    
+</head>
+<body>
+    <div class="container">
+        <div class="page">
+            <div class="header">
+                <div class="header-title">
+                    <h1>Faculty of IT</h1>
+                    <p>Hanoi university of Industry</p>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="School/Welcome">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="left-content">
+                    @RenderBody()
+                </div>
+
+                <div class="right-panel">
+                    <div class="categories">
+                        <h3>Categories</h3>
+                        <ul>
+                            <li><a href="/School/Index">Thêm 1 sinh viên</a></li>
+                            <li><a href="/School/TinhToan">Tính toán</a></li>
+                            <li><a href="/School/DisplayListStudent">Xem danh sách sv</a></li>
+                            <li><a href="/School/DisplayCourseStudent">Xem khóa học</a></li>
+                            <li><a href="/School/DisplayListTwoStudent">Xem 2 danh sách sv</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="Blogroll">
+                        <h3>Blogroll</h3>
+                        <ul>
+                            <li><a>Blogroll1</a></li>
+                            <li><a>Blogroll2</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <p>
+                    298 Cầu Diễn, bắc Từ Liêm, Hà Nội
+                </p>
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+</html>
+
+
+

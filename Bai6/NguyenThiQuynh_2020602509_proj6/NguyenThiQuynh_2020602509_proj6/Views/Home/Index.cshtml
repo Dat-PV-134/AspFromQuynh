@@ -1,0 +1,117 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<style>
+    .container{
+        margin-top:20px
+    }
+    a{
+        text-decoration: none;
+    }
+    li{
+        list-style-type: none;
+        margin-top: 20px;
+    }
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    th{
+        justify-content:center
+    }
+    tr, th, td{
+        border: 1px solid;
+    }
+</style>
+<main>
+    @*<section class="row" aria-labelledby="aspnetTitle">
+            <h1 id="title">ASP.NET</h1>
+            <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+            <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
+        </section>
+
+        <div class="row">
+            <section class="col-md-4" aria-labelledby="gettingStartedTitle">
+                <h2 id="gettingStartedTitle">Getting started</h2>
+                <p>
+                    ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+                    enables a clean separation of concerns and gives you full control over markup
+                    for enjoyable, agile development.
+                </p>
+                <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+            </section>
+            <section class="col-md-4" aria-labelledby="librariesTitle">
+                <h2 id="librariesTitle">Get more libraries</h2>
+                <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+                <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+            </section>
+            <section class="col-md-4" aria-labelledby="hostingTitle">
+                <h2 id="hostingTitle">Web Hosting</h2>
+                <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+                <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+            </section>
+        </div>*@
+    <div class="container">
+        <div  @*style="width: 2%"*@>
+            <ul>
+                <li><a href="https://www.haui.edu.vn/vn/html/quy-mo-dao-tao">Giới thiệu</a> </li>
+                <li><a href="https://tuyensinh.haui.edu.vn/">Tuyển sinh</a></li>
+                <li><a href="https://www.haui.edu.vn/vn/html/dai-hoc">Đào tạo</a></li>
+            </ul>
+        </div>
+        <div style="width: 60%">
+            <h2>Ký thỏa thuận hợp tác với Công ty Sunny Opotech Việt Nam</h2>
+            <p><b>Nhằm mở rộng cơ hội hợp tác và phát triển, sáng ngày 13/4, Đại học Công nghiệp Hà Nội và Công ty 
+                TNHH Sunny Opotech Việt Nam ký kết thỏa thuận hợp tác với nhiều nội dung quan trọng.</b></p>
+            <p>
+                Tham dự ký thỏa thuận, về phía Sunny Opotech Việt Nam có ông Dong Ke Wu - Phó Chủ tịch Tập đoàn Sunny; Bà Xu Feng - Trợ lý Tổng Giám đốc, 
+                kiêm Giám đốc nhân sự Công ty Công nghệ quang học thông minh Sunny Chiết Giang; ông Lin Cong Chao - Giám đốc nhân sự Sunny Opotech Việt Nam; 
+                cùng đại diện trưởng các phòng, ban.
+                Về phía Trường Đại học Công nghiệp Hà Nội, có TS.Kiều Xuân Thực - Hiệu trưởng Nhà trường; 
+                TS.Nguyễn Văn Thành - Giám đốc Trung tâm Hợp tác Doanh nghiệp; cùng đại diện lãnh đạo Khoa Điện, Điện tử.
+            </p>
+            <img src="https://www.haui.edu.vn//media/89/t89447.jpg" width="500px"/>
+            @*<p>
+                Theo thỏa thuận được ký kết, Sunny Opotech Việt Nam sẽ hợp tác phát triển mô hình đào tạo tuyển dụng; 
+                đẩy mạnh chương trình tham quan, trải nghiệm thực tập cho sinh viên, giảng viên HaUI; 
+                cử chuyên gia có kinh nghiệm tham gia đóng góp ý kiến, công nghệ cho việc xây dựng và cải tiến chương trình đào tạo lĩnh vực Điện, 
+                Điện tử của Đại học Công nghiệp Hà Nội.
+                Bên cạnh đó, hàng năm, Sunny Opotech Việt Nam sẽ có những xuất học bổng khuyến học dành cho sinh viên HaUI có thành tích xuất sắc 
+                trong học tập.
+            </p>*@
+            <p>
+                <table border="1" width="250px">
+                    <tr>
+                        <th>Name</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr>
+                        <td>Today is: </td>
+                        <td>@DateTime.Now.ToShortDateString()</td>
+                    </tr>
+                    <tr>
+                        <td>Hour: </td>
+                        <td>@DateTime.Now.Hour</td>
+                    </tr>
+                    <tr>
+                        <td>Minute: </td>
+                        <td>@DateTime.Now.Minute</td>
+                    </tr>
+                    <tr>
+                        <td>Second: </td>
+                        <td>@DateTime.Now.Second</td>
+                    </tr>
+                </table>
+            </p>
+            
+        </div>
+        <div  style="width: 25%">
+            <ul>
+                <li><img src="https://www.haui.edu.vn//media/89/t89446.jpg" width="300px"/></li>
+                <li><img src="https://www.haui.edu.vn//media/89/t89424.jpg" width="300px" /></li>
+                <li><img src="https://www.haui.edu.vn//media/89/t89273.jpg" width="300px"/> </li>
+            </ul>
+        </div>
+    </div>
+</main>

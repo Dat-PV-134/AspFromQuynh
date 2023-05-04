@@ -1,0 +1,34 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h2>Nhập điểm sinh viên</h2>
+        <form action="/NhapDiem/XuLy" method="post">
+            <div>
+                <label>Mã SV: </label>
+                <input type="text" name="id" />
+            </div>
+            <div>
+                <label>Họ và tên: </label>
+                <input type="text" name="name" />
+            </div>
+            <div>
+                <label>Điểm: </label>
+                <input type="text" name="marks" />
+            </div>
+            <hr />
+            <button type="submit" name="btnNhap">Nhập</button>
+        </form> <br />
+    </div>
+</body>
+</html>

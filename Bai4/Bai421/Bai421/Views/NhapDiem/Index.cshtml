@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form action="/NhapDiem/XuLy" method="post">
+    <table class="table-bordered table">
+        <tr>
+            <th colspan="3" align="center">NHẬP ĐIỂM THI</th>
+        </tr>
+        <tr>
+            <td>Họ và tên thí sinh: </td>
+            <td>
+                <input type="text" name="name" />
+            </td>
+            <td>
+                <input type="checkbox" name="chinh" value="true" /> Gia đình chính sách
+            </td>
+        </tr>
+        <tr>
+            <td>Chọn khu vực: </td>
+            <td colspan="2">
+                <select id="khuvuc">
+                    <option value="0">Khu vực A</option>
+                    <option value="1">Khu vực B</option>
+                    <option value="2">Khu vực C</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Vào điểm môn Toán: </td>
+            <td colspan="2">
+                <input type="number" name="toan" />
+            </td>
+        </tr>
+        <tr>
+            <td>Vào điểm môn Lý: </td>
+            <td colspan="2">
+                <input type="number" name="ly" />
+            </td>
+        </tr>
+        <tr>
+            <td>Vào điểm môn Hóa: </td>
+            <td colspan="2">
+                <input type="number" name="hoa" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center">
+                <button type="submit" name="btnTinh">Tính</button>
+            </td>
+        </tr>
+    </table>
+</form>
+

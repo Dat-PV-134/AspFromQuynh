@@ -1,0 +1,32 @@
+﻿@model KT1_Quynh_2020602509.Models.SanPham
+
+@{
+    ViewBag.Title = "HienThiNgay";
+}
+
+<h2>HienThiNgay</h2>
+
+<div>
+    <h4>Sản phẩm vừa nhập</h4>
+    &nbsp;
+    <table border="1" class="table-bordered table">
+        <tr>
+            <th>Mã sản phẩm</th>
+            <th>Tên sản phẩm</th>
+            <th>Số lượng</th>
+            <th>Giá tiền</th>
+            <th>Giám giá</th>
+            <th>Thành tiền</th>
+        </tr>
+
+        <tr>
+            <td>@Model.ma</td>
+            <td>@Model.ten</td>
+            <td>@Model.soluong</td>
+            <td>@Model.giatien</td>
+            <td>@Model.giamgia</td>
+            <td>@Model.thanhtien()</td>
+        </tr>
+    </table>
+</div>
+

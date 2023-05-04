@@ -1,0 +1,91 @@
+﻿@using WebApplication1.Models
+@{
+    ViewBag.Title = "View3List";
+    List<Student> lihnoi = ViewBag.hnoi;
+    List<Student> lihn = ViewBag.hn;
+    List<Student> litb = ViewBag.tb;
+
+}
+
+<h2>Ha noi</h2>
+<table width="300px">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>address</th>
+        <th>mark</th>
+    </tr>
+    @foreach (var item in lihnoi)
+    {
+        <tr>
+            <td>
+                @item.id
+            </td>
+            <td>
+                @item.name
+            </td>
+            <td>
+                @item.address
+            </td>
+            <td>
+                @item.mark
+                <br />
+            </td>
+        </tr>
+    }
+</table>
+
+<h2>Ha nam</h2>
+<table width="300px">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>address</th>
+        <th>mark</th>
+    </tr>
+    @foreach (var item in lihn)
+    {
+        <tr>
+            <td>
+                @item.id
+            </td>
+            <td>
+                @item.name
+            </td>
+            <td>
+                @item.address
+            </td>
+            <td>
+                @item.mark
+                <br />
+            </td>
+        </tr>
+    }
+</table>
+<h2>Thai Binh</h2>
+<table width="300px">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>address</th>
+        <th>mark</th>
+    </tr>
+    @foreach (var item in litb)
+    {
+        <tr>
+            <td>
+                @item.id
+            </td>
+            <td>
+                @item.name
+            </td>
+            <td>
+                @item.address
+            </td>
+            <td>
+                @item.mark
+                <br />
+            </td>
+        </tr>
+    }
+</table>

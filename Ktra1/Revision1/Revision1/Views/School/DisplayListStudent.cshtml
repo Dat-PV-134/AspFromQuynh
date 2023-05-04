@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Revision1.Models.Students>
+@*@{ 
+    List<Revision1.Models.Students> li = new List<Revision1.Models.Students>();
+    string id = Request.Form["sId"];
+    string name = Request.Form["sName"];
+    int age = int.Parse(Request.Form["Age"]);
+    string addr = Request.Form["Addr"];
+    li.Add(new Revision1.Models.Students(id, name, age, addr));
+}*@
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DisplayListStudent</title>
+</head>
+<body>
+    <div>
+        <h4>Students</h4>
+
+        <table border="1" class="table table-bordered">
+            <tr>
+                <th>ID </th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Address</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.sId)</td>
+                    <td>@Html.DisplayFor(modelItem => item.sName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Age)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Addr)</td>
+                </tr>
+            }
+        </table>
+    </div>
+
+</body>
+</html>
