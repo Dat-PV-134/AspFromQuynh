@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Baitap10_1.Models.Hang>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Danh sách hàng</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Mã hàng
+        </th>
+        <th>
+            Tên hàng
+        </th>
+        <th>
+            Tên nhà cung cấp
+        </th>
+        <th>
+            Giá
+        </th>
+        <th>
+            Số lượng có
+        </th>
+        <th>
+            Mô tả
+        </th>
+        <th>
+            Chiết khấu
+        </th>
+        <th>
+            Hình ảnh
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nha_CC.TenNCC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LuongCo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoTa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChietKhau)
+        </td>
+        <td>
+            @{
+                string path = "~Images/" + item.HinhAnh;
+                }
+                <img src="@Url.Content(path)" width="180" class="img-thumbnail" />
+                @Html.DisplayFor(modelItem => item.HinhAnh)
+            </td>
+        <td>
+            @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.MaHang.Trim() }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id = item.MaHang.Trim() }) |
+            @Html.ActionLink("Xóa", "Delete", new { id = item.MaHang })
+        </td>
+    </tr>
+}
+
+</table>
