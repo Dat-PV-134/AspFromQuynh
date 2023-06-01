@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "qlsp", "qlsp.csproj", "{CD264B4B-79B8-4301-89F2-B55B1DF0BF7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD264B4B-79B8-4301-89F2-B55B1DF0BF7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD264B4B-79B8-4301-89F2-B55B1DF0BF7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD264B4B-79B8-4301-89F2-B55B1DF0BF7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD264B4B-79B8-4301-89F2-B55B1DF0BF7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {39A9E941-D792-487D-8BDE-86A3B47BE997}
+	EndGlobalSection
+EndGlobal

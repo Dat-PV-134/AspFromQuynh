@@ -1,0 +1,6 @@
+﻿@model IEnumerable<Revision1.Models.Danhmuc>
+
+@foreach (var item in Model)
+{
+    <li> <a href="/shop/danhmuc/@item.MaDanhmuc"> @Html.DisplayFor(modelItemtem => item.TenDanhmuc) </a></li>
+}

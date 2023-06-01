@@ -1,0 +1,37 @@
+﻿@model IEnumerable<qlsp.Models.Sanpham>
+
+@{
+    ViewBag.Title = "Xemdanhsach";
+}
+
+<h2>Xem danh sách</h2>
+<p>
+    @Html.ActionLink("Tạo mới", "ThemDuLieu")
+</p>
+@using (Html.BeginForm())
+{
+    <p>
+        Tìm sản phẩm theo giá: @Html.TextBox("SearchingString")
+        <input type="submit" value="Tìm" />
+    </p>
+}
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-6 col-md-4 col-lg-3 text-center">
+            <b>Mã sản phẩm</b> @Html.DisplayFor(i => item.Mavd) <br />
+            <b>Tên sản phẩm</b> @Html.DisplayFor(i => item.Tenvd) <br />
+            @{
+                var path = "~/Content/Images/" + item.TenAnh;
+                <img src="@Url.Content(path)" width="250px" /><br />
+            }
+            <b>Mô tả</b> @Html.DisplayFor(i => item.Mota) <br />
+            <b>Đơn giá</b> @Html.DisplayFor(i => item.Giatien) <br />
+            <b>Số lượng</b> @Html.DisplayFor(i => item.Soluong) <br />
+            @Html.ActionLink("Edit", "Edit", new { id = item.Mavd }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Mavd }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Mavd })
+        </div>
+                    }
+</div>
+
