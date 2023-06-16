@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Login AjaxDemo</h2>
+
+<label for="name">User name</label>
+<input type="text" id="uname" />
+<br />
+
+<label for="pass">Password</label>
+<input type="text" id="pass" />
+<br />
+<button id="submit">Login</button>
+<br />
+<br />
+<div id="msg"></div>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#submit").click(function (e)){
+            if ($("#uname").val == "")
+                $("#msg").html("Username cannot empty");
+            else {
+                $.ajax({
+                    type: "POST",
+                    url: "/AjaxDemo2Login/Login",
+                    contentType: "application/json; charset=utf-8"
+                    data: '{"username": "' + $("uname").val() + '", "password": "' + $("#pass").val() + '"}',
+                    dataType: "html",
+                    success: function (response) {
+                        $("#msg").html(response);
+                    },
+                    error: function (xhr, status, error) {
+                        $("#msg").html("Error: " + error)
+                    }
+                });
+            }
+            return false;
+        });
+    });
+</script>
+

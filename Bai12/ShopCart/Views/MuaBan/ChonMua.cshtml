@@ -1,0 +1,46 @@
+﻿@model ShopCart.Models.SanPhamMua
+
+@{
+    ViewBag.Title = "Chonmua";
+}
+
+<h2>Chonmua</h2>
+@{
+    List<ShopCart.Models.SanPhamMua> dsmua = (List<ShopCart.Models.SanPhamMua>)Session["giohang"];
+    List<ShopCart.Models.SanPham> ds = (List<ShopCart.Models.SanPham>)Session["hanghoa"];
+
+}
+<table class="table-bordered">
+    <tr style="background-color: #ffffcc">
+        <td align="center">Mã sản phẩm</td>
+        <td>Tên sản phẩm</td>
+        <td>Hình ảnh</td>
+        <td>Số lượng</td>
+        <td align="center">Giá tiền</td>
+        <td>Xóa sản phẩm</td>
+    </tr>
+    @foreach (var item in dsmua)
+    {
+        ShopCart.Models.SanPham s = new ShopCart.Models.SanPham(item.masp);
+        int vitri = ds.IndexOf(s);
+        s = ds[vitri];
+        <tr>
+            <td align="center">@s.masp</td>
+            <td>@s.tensp</td>
+            <td align="center">
+                <img src="~/Content/Hinhanh/@s.hinhanh" width="150" />
+            </td>
+            <td align="center">@item.soluong</td>
+            <td align="center">@s.giatien</td>
+            <td align="center">
+                <a href="@Url.Action("XoaSanPham", "MuaBan", new { masp = item.masp })">Xóa sản phẩm</a>
+            </td>
+        </tr>
+
+    }
+</table>
+<br />
+@Html.ActionLink("Mua tiếp", "Index", "MuaBan")
+<br />
+<br />
+@Html.ActionLink("Đặt hàng", "DatMua", "MuaBan")

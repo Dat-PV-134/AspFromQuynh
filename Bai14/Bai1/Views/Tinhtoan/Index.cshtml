@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<table>
+    <tr>
+        <td>Nhập số thứ nhất</td>
+        <td><input type="text" id="num1" /></td>
+    </tr>
+    <tr>
+        <td>Nhập số thứ hai</td>
+        <td><input type="text" id="num2" /></td>
+    </tr>
+    <tr>
+        <td>Kết quả</td>
+        
+        <td> <div  id="result"></div></td>
+    </tr>
+    <tr>
+        <td colspan="2" style="text-align:center">
+            <input type="button" id="btn1" value="Cộng" />
+            <input type="button" id="btn2" value="Trừ" />
+            <input type="button" id="btn3" value="Nhân" />
+            <input type="button" id="btn4" value="Chia" />
+        </td>
+    </tr>
+</table>
+
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $("#btn1").click(function () {
+            var n1 = $("#num1").val();
+            var n2 = $("#num2").val();
+            var rs = n1 + n2;
+            
+            
+            $.ajax({
+                url: '@Url.Action("Cong", "AjaxDemo1")?n1=' + n1 + '&n2=' + n2,
+                success: function (data) {
+                    if (data.status == "OK") {
+                        $("#result").html(data.rs);
+                        
+                    }
+                }
+            });
+        });
+    });
+</script>

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ShopCart.Models.SanPhamMua>
+@{
+    ViewBag.Title = "DatMua";
+}
+
+<h2>Dat Mua</h2>
+
+@{
+    List<ShopCart.Models.SanPhamMua> dsmua = (List<ShopCart.Models.SanPhamMua>)Session["giohang"];
+    List<ShopCart.Models.SanPham> ds = (List<ShopCart.Models.SanPham>)Session["hanghoa"];
+
+}
+<table class="table-bordered" width="500">
+    <tr style="background-color: #ffffcc">
+        <td align="center">Mã sản phẩm</td>
+        <td>Tên sản phẩm</td>
+        <td>Hình ảnh</td>
+        <td>Số lượng</td>
+        <td align="center">Giá tiền</td>
+        <td>Thành tiền</td>
+    </tr>
+    @{ 
+        var tongsoluong = 0;
+        var thanhtien = 0;
+        var tongtien = 0;
+    }
+    @foreach (var item in Model)
+    {
+        ShopCart.Models.SanPham s = new ShopCart.Models.SanPham(item.masp);
+        int vitri = ds.IndexOf(s);
+        s = ds[vitri];
+        tongsoluong += item.soluong;
+        thanhtien = item.soluong * s.giatien;
+        tongtien += thanhtien;
+        
+        <tr>
+            <td align="center">@s.masp</td>
+            <td>@s.tensp</td>
+            <td align="center">
+                <img src="~/Content/Hinhanh/@s.hinhanh" width="150" />
+            </td>
+            <td align="center">@s.giatien</td>
+            <td align="center">
+                @thanhtien
+            </td>
+            <td align="center">
+                @tongtien
+            </td>
+        </tr>
+
+    }
+</table>
+<p></p>
+<br />
+<p>Số lượng sản phẩm quý khách đã mua là @tongsoluong</p>
+<p></p>
+<p>Tổng tiền quý khách cần phải trả là @tongtien</p>
+@Html.ActionLink("Mua tiếp đơn khác", "Index", "MuaBan")
