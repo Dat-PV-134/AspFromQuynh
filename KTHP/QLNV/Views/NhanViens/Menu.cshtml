@@ -1,0 +1,9 @@
+﻿@model IEnumerable<QLNV.Models.Phong>
+
+
+@foreach (var item in Model)
+{
+    var url = "/nv/nvbymaphong/" + item.Maphong;
+    <a href="@url">@item.Tenphong</a> 
+    <label>&nbsp; | &nbsp;</label>
+}

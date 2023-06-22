@@ -1,0 +1,106 @@
+﻿@model Bai3.Models.Employee
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<h3>Bạn chắc chắn muốn xóa bản ghi này chứ?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Department.deptname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department.deptname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.addr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.addr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.salary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.image)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" id="delete" name="delete" class="btn btn-primary" /> |
+            @Html.ActionLink("Trở về", "Index")
+        </div>
+    }
+</div>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#delete").click(function (event) {
+                event.preventDefault(); // Ngăn chặn việc gửi form mặc định
+
+                var form = $(this).closest('form'); // Lấy đối tượng form gần nhất
+                var url = form.attr("action");
+                var eid = form.find('#eid').val(); // Lấy giá trị của trường eid
+
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    dataType: "json",
+                    data: { id: eid }, // Truyền giá trị của eid
+                    success: function (response) {
+                        if (response.result === true) {
+                            // Hiển thị thông báo thành công
+                            alert("Xóa thành công");
+                            window.location.href = '@Url.Action("Index", "Employees")';
+                        } else {
+                            // Hiển thị thông báo lỗi và xử lý các trường hợp lỗi
+                            alert(response.error);
+                        }
+                    },
+                    error: function (response) {
+                        alert("Lỗi trong hàm ajax."); // Hiển thị thông báo lỗi cho người dùng
+                    }
+                });
+            });
+        });
+    </script>
+    @Scripts.Render("~/bundles/jqueryval")
+}

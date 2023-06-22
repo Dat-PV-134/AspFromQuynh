@@ -1,0 +1,8 @@
+﻿@model IEnumerable<Revision.Models.Phong>
+
+@foreach (var item in Model)
+{
+    var url = "/nv/nvbyMaphong/" + item.Maphong;
+    <a href="@url">@item.Tenphong</a>
+    <label>&nbsp; | &nbsp;</label>
+}
